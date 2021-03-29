@@ -21,14 +21,13 @@ class App extends Component {
     script.src = "https://apis.google.com/js/api.js";
     document.body.appendChild(script);
   }
-
+  
   initClient = () => {
     try {
       window.gapi.client
         .init({
-          apiKey: "AIzaSyCbJmoRQ1saIH_GKxIJmpqs4T5tladZjzg",
-          clientId:
-            "1041270221834-3rssorksjh2ciaiuifill1ph8sscjj19.apps.googleusercontent.com",
+          apiKey: process.env.REACT_APP_API_ID,
+          clientId: process.env.REACT_APP_CLIENT_ID,
           scope: SCOPE,
           discoveryDocs: [discoveryUrl],
         })
